@@ -63,7 +63,7 @@ function generatePassword () {
 
   var finalPass = '';
 
-  for(var i = 0; i <= length; i++) {
+  for(var i = 0; (i <= length-1); i++) {
     finalPass = finalPass + randomPass[Math.floor(Math.random() * randomPass.length)];
     console.log(finalPass);
   }
