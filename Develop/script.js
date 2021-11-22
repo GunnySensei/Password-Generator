@@ -18,17 +18,21 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword () {
   var length = window.prompt('Enter the length of your password between 8 and 128 characters.');
-  console.log(length);
-  var lowercase = window.prompt('Would you like to include lowercase characters? [Enter: YES or NO]');
-  console.log(lowercase);
-  var uppercase = window.prompt('Would you like to include uppercase characters? [Enter: YES or NO]');
-  console.log(uppercase);
-  var numeric = window.prompt('Would you like to include numeric characters? [Enter: YES or NO]');
-  console.log(numeric);
-  var specialChar = window.prompt('Would you like to include special characters? [Enter: YES or NO]');
-  console.log(specialChar);
+    while(length <=7 || length>= 129) {
+      window.alert('Your password must be between 8 and 128 characters. Try again.')
+      var length = window.prompt('Enter the length of your password between 8 and 128 characters.');
+    }
 
-}
+  var lowercase = window.confirm('Would you like to include lowercase characters?');
+  var uppercase = window.confirm('Would you like to include uppercase characters?');
+  var numeric = window.confirm('Would you like to include numeric characters?');
+  var specialChar = window.confirm('Would you like to use special characters?');
 
-var lengthCheck = function(length) {
+  while (lowercase === false && uppercase === false && numeric === false && specialChar === false) {
+    window.alert('You must select at least one perameter.');
+    var lowercase = window.confirm('Would you like to include lowercase characters?');
+    var uppercase = window.confirm('Would you like to include uppercase characters?');
+    var numeric = window.confirm('Would you like to include numeric characters?');
+    var specialChar = window.confirm('Would you like to use special characters?');
+  }
 }
